@@ -13,7 +13,7 @@ type AttractionProps = {
 const Attraction = ({ title, description, distance, imagePath, linkUrl, altText }: AttractionProps) => {
     return (
         <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-            <div className="relative h-48 w-full">
+            <div className="relative h-40 sm:h-48 w-full">
                 <div className="absolute inset-0 bg-[#F5EEDC]/50 flex items-center justify-center">
                     <p className="text-[#183B4E] text-sm font-medium">Image placeholder: {title}</p>
                 </div>
@@ -27,16 +27,16 @@ const Attraction = ({ title, description, distance, imagePath, linkUrl, altText 
                 />}
             </div>
 
-            <div className="p-4">
-                <div className="mb-2">
+            <div className="p-3 sm:p-4">
+                <div className="mb-1.5 sm:mb-2">
                     <div className="flex justify-end mb-1">
                         <span className="text-xs bg-[#F5EEDC] text-[#183B4E] px-2 py-1 rounded-full font-montserrat font-medium whitespace-nowrap">
                             {distance}
                         </span>
                     </div>
-                    <h3 className="text-lg font-playfair font-semibold text-[#27548A] leading-tight">{title}</h3>
+                    <h3 className="text-base sm:text-lg font-playfair font-semibold text-[#27548A] leading-tight">{title}</h3>
                 </div>
-                <p className="text-[#183B4E]/80 text-sm font-montserrat mb-4">{description}</p>
+                <p className="text-[#183B4E]/80 text-xs sm:text-sm font-montserrat mb-3 sm:mb-4">{description}</p>
 
                 {linkUrl && (
                     <Link
@@ -135,16 +135,16 @@ export default function NearbyAttractions() {
     ];
 
     return (
-        <section id="nearby" className="py-16 px-4 sm:px-8 md:px-16 lg:px-24 bg-[#F5EEDC]">
+        <section id="nearby" className="py-10 sm:py-16 px-4 sm:px-8 md:px-16 lg:px-24 bg-[#F5EEDC]">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-6xl font-playfair font-bold text-[#183B4E] mb-4">Kawasan Sekitar</h2>
-                    <p className="text-[#183B4E] font-montserrat max-w-2xl mx-auto font-bold">
+                <div className="text-center mb-8 sm:mb-12">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-playfair font-bold text-[#183B4E] mb-3 sm:mb-4">Kawasan Sekitar</h2>
+                    <p className="text-sm sm:text-base text-[#183B4E] font-montserrat max-w-2xl mx-auto font-bold">
                         Jelajahi tempat menarik berhampiran Pokok Sena dan Alor Setar yang boleh dilawati semasa menginap di Tuah Suci Homestay.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                     {attractions.map((attraction, index) => (
                         <Attraction
                             key={index}
